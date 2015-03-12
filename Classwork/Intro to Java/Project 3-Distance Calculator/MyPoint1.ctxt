@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.params=
+comment0.target=MyPoint1()
+comment0.text=\n\ No\ argument\ constructor\n
+comment1.params=x\ y
+comment1.target=MyPoint1(double,\ double)
+comment1.text=\n\ Constructor\ that\ refers\ to\ specific\ coordinates\n\ \n
+comment2.params=x\ y
+comment2.target=double\ distance(double,\ double)
+comment2.text=\n\ Calculating\ the\ distance\ between\ the\ two\ points\ with\ x\ and\ y\ coordinates\n\ \n\ @return\ \ the\ distance\ between\ two\ points\n\ @param\ x\ the\ x\ position\ of\ the\ instanced\ variable\n\ @param\ y\ the\ y\ position\ of\ the\ instanced\ variable\n
+comment3.params=Point
+comment3.target=double\ distance(MyPoint1)
+comment3.text=\n\ Calculates\ the\ distance\ between\ to\ objects\ MyPoint1\ and\ Point\ using\ the\ previous\ distance\ method.\n\ \n\ @return\ the\ distance\ between\ two\ objects\n\ @param\ Point\ \ the\ instanced\ MyPoint1\ object\n
+comment4.params=
+comment4.target=double\ distance()
+comment4.text=\n\ Distance\ from\ (0,0)\n
+comment5.params=
+comment5.target=java.lang.String\ statement()
+comment5.text=\n\ Returns\ a\ constructor\ statement\ for\ an\ instance\ of\ MyPoint1\n
+comment6.params=
+comment6.target=java.lang.String\ toString()
+comment6.text=\n\ A\ quick\ overview\ of\ what\ this\ class\ does\n
+numComments=7

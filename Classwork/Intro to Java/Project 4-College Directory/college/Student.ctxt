@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Student()
+comment0.text=\n\ No\ argument\ constructor\n
+comment1.params=firstName\ lastName\ studentID\ gradePointAverage
+comment1.target=Student(java.lang.String,\ java.lang.String,\ int,\ double)
+comment1.text=\n\ The\ constructor\ sets\ initial\ value\ for\ the\ studentID\ and\ gradePointAverage\ values.\n\ Explicit\ call\ to\ superclass\ CommunityMember\ sets\ initial\ valeus\ for\ fields\ firstName\ and\ lastName.\n\ \n\ @param\ \ \ firstName\ \ \ Student's\ first\ name\ from\ superclass\ CommunityMember.\n\ @param\ lastName\ \ Student's\ last\ name\ from\ superlass\ CommunityMember.\n\ @param\ studentID\ Student's\ student\ ID\ number.\n\ @param\ gradePointAverage\ Student's\ grade\ point\ average\n
+comment2.params=studentID
+comment2.target=void\ setStudentID(int)
+comment2.text=\n\ Student\ ID\ Set\ method\n\ \n\ @param\ studentID\ StudentID\ number\n
+comment3.params=gradePointAverage
+comment3.target=void\ setGradePointAverage(double)
+comment3.text=\n\ Grade\ Point\ Average\ set\ method\n\ \n\ @param\ gradePointAverage\ Student\ GPA\n
+comment4.params=
+comment4.target=int\ getStudentID()
+comment4.text=\n\ Student\ ID\ get\ method\n\ \n\ @return\ studentID\ \ \ \ Value\ of\ student\ ID\n
+comment5.params=
+comment5.target=double\ getGradePointAverage()
+comment5.text=\n\ Grade\ Point\ Average\ get\ method\n\ \n\ @return\ gradePointAverage\ \ \ \ Student\ GPA\ value\n
+comment6.params=
+comment6.target=java.lang.String\ toString()
+comment6.text=\n\ To\ String\ method\ to\ provide\ information\ user\ readout\ of\ what\ class\ does\n\ \n\ @return\ \ \ \ \ \ Produces\ a\ return\ of\ the\ getStudentID\ and\ getGradePointAverage\ values\ appended\ to\ the\ super\ class\n\ get\ statements\n
+numComments=7

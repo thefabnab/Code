@@ -1,0 +1,48 @@
+
+/**
+ * Write a description of class Tax here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
+public class Tax
+{
+    private int filingStatus;
+    private double taxableIncome;
+    
+    private static int [][] brackets = 
+    {{27050, 45200, 22600, 36250}, { 65550, 109250, 54625, 93650}, {136750, 166500, 83250, 151650}, 
+    {297350, 297350, 148675, 297350}};
+    
+    public static double[] rates = {.15, .275, .305, .355, .391};
+    
+    public Tax()
+    {
+        setFilingStatus(filingStatus);
+        setTaxableIncome(taxableIncome);
+    }
+    
+    public void setFilingStatus( int filingStatus)
+    {
+        this.filingStatus = filingStatus;
+    }
+    
+    public void setTaxableIncome ( double taxableIncome)
+    {
+        this.taxableIncome = taxableIncome;
+    }
+    
+    public int getFilingStatus()
+    {
+        return filingStatus;
+    }
+    
+    public double getTaxableIncome()
+    {
+        return taxableIncome;
+    }
+    
+    
+     
+    
+}

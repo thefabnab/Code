@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=firstName\ lastName\ employeeID
+comment0.target=Employee(java.lang.String,\ java.lang.String,\ int)
+comment0.text=\ The\ constructor\ sets\ initial\ value\ for\ the\ employeeID\ field.\n\ \ Explicit\ call\ to\ superclass\ CommunityMember\ sets\ initial\ values\ for\ \n\ \ fields\ firstName\ and\ lastName.\n\ \ \n\ \ @param\ firstName\ Employee's\ first\ name\ from\ superclass\ CommunityMember.\n\ \ @param\ lastName\ Employee's\ last\ name\ from\ superclass\ CommunityMember.\n\ \ @param\ employeeID\ Employee's\ ID\ number.\n
+comment1.params=employeeID
+comment1.target=void\ setEmployeeID(int)
+comment1.text=\ Sets\ the\ value\ for\ the\ employeeID\ field\ which\ must\ be\ between\ 1000\ and\ 9999.\n\ \ A\ value\ of\ zero\ (0)\ indicates\ that\ employeeID\ field\ is\ empty.\n\ \ \n\ \ @param\ employeeID\ Employee's\ ID\ number.\n
+comment2.params=
+comment2.target=int\ getEmployeeID()
+comment2.text=\ Returns\ current\ value\ of\ the\ employeeID\ field.\n\ \n\ \ @return\ ID\ number\ of\ employee\ as\ data\ type\ int.\n
+comment3.params=
+comment3.target=java.lang.String\ toString()
+comment3.text=\ Returns\ formatted\ employeeID\ field\ including\ text\ labels.\n\ \ Preceded\ by\ firstName\ and\ lastName\ fields\ from\ call\ to\ toString()\ method\n\ \ of\ superclass\ CommunityMember.\n\ \ \n\ \ @return\ Formatted\ employee\ ID\ number\ field\ as\ type\ String.\n
+numComments=4

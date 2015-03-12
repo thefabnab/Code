@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Executive()
+comment0.text=\n\ No\ arg\ constructor\n
+comment1.params=name\ address\ salary
+comment1.target=Executive(java.lang.String,\ java.lang.String,\ double)
+comment1.text=\n\ Constructor\ returning\ values\ representing\ the\ executive\ specific\ employee\n\ \n\ @param\ name\ \ Executive\ name\n\ @param\ address\ \ \ Executive\ address\n\ @param\ salary\ \ \ \ Executive\ salary\n
+comment2.params=
+comment2.target=double\ getAdditionalIncome()
+comment2.text=\n\ Calculates\ employee\ additional\ income\ taking\ into\ account\ the\ executive\ bonus\ rate.\n\ \n\ @return\ \ employee\ additional\ salary\ as\ a\ function\ of\ bonus\ rate\n
+numComments=3

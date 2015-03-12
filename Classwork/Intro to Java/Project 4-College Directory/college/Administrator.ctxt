@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=firstName\ lastName\ employeeID\ department\ title
+comment0.target=Administrator(java.lang.String,\ java.lang.String,\ int,\ java.lang.String,\ java.lang.String)
+comment0.text=\ The\ constructor\ sets\ initial\ value\ for\ the\ title\ field.\n\ \ Explicit\ call\ to\ superclass\ Faculty\ sets\ initial\ values\ for\ fields\ firstName,\ lastName,\ employeeID\ and\ department.\n\ \ \n\ \ @param\ firstName\ Administrator's\ first\ name\ from\ indirect\ superclass\ CommunityMember.\n\ \ @param\ lastName\ Administrator's\ last\ name\ from\ indirect\ superclass\ CommunityMember.\n\ \ @param\ annualSalary\ Administrator's\ ID\ number\ from\ indirect\ superclass\ Employee.\n\ \ @param\ department\ Department\ in\ which\ administrator\ works\ from\ superclass\ Faculty.\n\ \ @param\ title\ Administrator's\ title.\n
+comment1.params=title
+comment1.target=void\ setTitle(java.lang.String)
+comment1.text=\ Sets\ the\ value\ for\ the\ title\ field\ converted\ to\ all\ uppercase\ letters.\n\ \ An\ empty\ String\ value\ indicates\ that\ the\ title\ field\ is\ empty.\n\ \ \n\ \ @param\ title\ Administrator's\ title.\n
+comment2.params=
+comment2.target=java.lang.String\ getTitle()
+comment2.text=\ Returns\ current\ value\ of\ the\ title\ field.\n\ \n\ \ @return\ Title\ of\ administrator\ as\ type\ String.\n
+comment3.params=
+comment3.target=java.lang.String\ toString()
+comment3.text=\ Returns\ formatted\ title\ field\ including\ text\ labels.\n\ \ Preceded\ by\ firstName,\ lastName,\ employeeID\ and\ department\ fields\ from\n\ \ call\ to\ toString()\ method\ of\ superclass\ Faculty.\n\ \ \n\ \ @return\ Formatted\ department\ field\ as\ type\ String.\n
+numComments=4

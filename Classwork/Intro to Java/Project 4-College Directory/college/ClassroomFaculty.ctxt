@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.params=firstName\ lastName\ employeeID\ department\ facultyRank\ semesterCredits
+comment0.target=ClassroomFaculty(java.lang.String,\ java.lang.String,\ int,\ java.lang.String,\ java.lang.String,\ int)
+comment0.text=\ The\ constructor\ sets\ initial\ values\ for\ the\ faculty\ rank\ and\n\ \ semester\ credits\ fields.\ \ Explicit\ call\ to\ superclass\ Faculty\n\ \ sets\ initial\ values\ for\ fields\ firstName,\ lastName,\ employeeID\n\ \ and\ department.\n\n\ \ @param\ firstName\ Classroom\ faculty\ member's\ first\ name\ from\ indirect\ superclass\ CommunityMember\n\ \ @param\ lastName\ Classroom\ faculty\ member's\ last\ name\ from\ indirect\ superclass\ CommunityMember\n\ \ @param\ annualSalary\ Classroom\ faculty\ member's\ ID\ number\ from\ indirect\ superclass\ Employee\n\ \ @param\ department\ Department\ in\ which\ classroom\ faculty\ member\ works\ from\ superclass\ Faculty\n\ \ @param\ facultyRank\ Classroom\ faculty\ member's\ rank\n\ \ @param\ semesterCredits\ Classroom\ faculty\ member's\ teaching\ load\ for\ semester\ in\ credits\n
+comment1.params=facultyRank
+comment1.target=void\ setFacultyRank(java.lang.String)
+comment1.text=\ Sets\ the\ value\ for\ the\ facultyRank\ field\ which\ must\ be\ a\n\ \ String\ contained\ in\ rankTable[]\ array.\ \ Valid\ departments\ are\n\ \ "INSTRUCTOR",\ "ASSISTANT",\ "ASSOCIATE",\ and\ "PROFESSOR".\ \ An\n\ \ empty\ String\ value\ indicates\ that\ the\ facultyRank\ field\ is\ empty.\n\n\ \ @param\ facultyRank\ Classroom\ faculty\ member's\ rank\n
+comment2.params=semesterCredits
+comment2.target=void\ setSemesterCredits(int)
+comment2.text=\ Sets\ the\ value\ for\ the\ semesterCredits\ field\ which\ must\ be\n\ \ between\ zero\ (0)\ and\ 24.\ \ A\ value\ of\ minus\ one\ (-1)\ indicates\n\ \ that\ semesterCredits\ field\ is\ empty.\n\n\ \ @param\ semesterCredits\ Classroom\ faculty\ member's\ teaching\ load\ for\ semester\ in\ credits\n
+comment3.params=
+comment3.target=java.lang.String\ getFacultyRank()
+comment3.text=\ Returns\ current\ value\ of\ the\ faculty\ rank\ field.\n\n\ \ @return\ Rank\ of\ classroom\ faculty\ member\ as\ type\ String\n
+comment4.params=
+comment4.target=int\ getSemesterCredits()
+comment4.text=\ Returns\ current\ value\ of\ the\ semesterCredits\ field.\n\n\ \ @return\ Classroom\ faculty\ member's\ teaching\ load\ for\ semester\ in\ credits\ as\ data\ type\ int\n
+comment5.params=
+comment5.target=java.lang.String\ toString()
+comment5.text=\ Returns\ formatted\ facultyRank\ and\ semesterCredits\ fields\n\ \ including\ text\ labels.\ \ Preceded\ by\ firstName,\ lastName,\n\ \ employeeID\ and\ \ department\ fields\ from\ call\ to\ toString()\n\ \ method\ of\ superclass\ Faculty.\n\n\ \ @return\ Formatted\ classroom\ faculty\ member's\ rank\ and\ teaching\n\ \ \ \ \ \ \ \ \ \ load\ for\ semester\ in\ credits\ as\ type\ String\n
+numComments=6

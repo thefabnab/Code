@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.params=firstName\ lastName\ gradYear\ degree
+comment0.target=Alum(java.lang.String,\ java.lang.String,\ int,\ java.lang.String)
+comment1.params=gradYear
+comment1.target=void\ setGradYear(int)
+comment2.params=degree
+comment2.target=void\ setDegree(java.lang.String)
+comment3.params=
+comment3.target=int\ getGradYear()
+comment4.params=
+comment4.target=java.lang.String\ getDegree()
+numComments=5

@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.params=
+comment0.target=CommunityMember()
+comment0.text=\n\ No\ parameter\ constructor\n
+comment1.params=firstName\ lastName
+comment1.target=CommunityMember(java.lang.String,\ java.lang.String)
+comment1.text=\ The\ constructor\ sets\ initial\ values\ for\ the\ firstName\ and\ lastName\ fields.\n\ \n\ \ @param\ firstName\ Member's\ first\ name.\n\ \ @param\ lastName\ Member's\ last\ name.\n
+comment2.params=firstName
+comment2.target=void\ setFirstName(java.lang.String)
+comment2.text=\ Sets\ the\ value\ for\ the\ firstName\ field\ converted\ to\ all\ uppercase\ letters.\n\ \ An\ empty\ String\ value\ indicates\ that\ the\ first\ name\ field\ is\ empty.\n\ \ \n\ \ @param\ firstName\ Member's\ first\ name.\n
+comment3.params=lastName
+comment3.target=void\ setLastName(java.lang.String)
+comment3.text=\ Sets\ the\ value\ for\ the\ lastName\ field\ converted\ to\ all\ uppercase\ letters.\n\ \ An\ empty\ String\ value\ indicates\ that\ the\ last\ name\ field\ is\ empty.\n\ \ \n\ \ @param\ lastName\ Member's\ first\ name.\n
+comment4.params=
+comment4.target=java.lang.String\ getFirstName()
+comment4.text=\ Returns\ current\ value\ of\ the\ firstName\ field.\n\ \n\ \ @return\ First\ name\ of\ member\ as\ type\ String.\n
+comment5.params=
+comment5.target=java.lang.String\ getLastName()
+comment5.text=\ Returns\ current\ value\ of\ the\ lastName\ field.\n\ \n\ \ @return\ Last\ name\ of\ member\ as\ type\ String.\n
+comment6.params=
+comment6.target=java.lang.String\ toString()
+comment6.text=\ Returns\ formatted\ firstName\ and\ lastName\ fields\ including\ text\n\ \ labels.\n\n\ \ @return\ Formatted\ first\ name\ and\ last\ name\ fields\ as\ type\ String\n
+numComments=7

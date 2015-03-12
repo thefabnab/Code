@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.params=args
+comment0.target=void\ main(java.lang.String[])
+comment0.text=\n\ Using\ the\ JFileChooser\ the\ user\ picks\ the\ file\ they'd\ like\ to\ be\ converted\ from\ new\ line\ to\ end\n\ of\ line.\ \ The\ file\ is\ then\ scanned\ and\ put\ into\ a\ string,\ maintaining\ its\ formatting\ and\ has\ its\n\ {\ positioning\ changed\ via\ a\ replaceAll\ method.\n\ \n\ @param\ args\ The\ String[]\ array\ command\ line\ parameter\n\ \n\ @throws\ IOException\ if\ some\ sort\ of\ I/O\ exception\ has\ occurred\n
+numComments=1

@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.params=newSymbol\ newName
+comment0.target=Stock(java.lang.String,\ java.lang.String)
+comment1.params=newCurrentPrice
+comment1.target=void\ today(double)
+comment2.params=newClosingPrice
+comment2.target=void\ yesterday(double)
+comment3.params=
+comment3.target=double\ getChangePercent()
+comment4.params=
+comment4.target=void\ printOut()
+comment4.text=\n\ If\ statement\ to\ produce\ a\ print\ ouput\ displaying\ the\ status\ of\ your\ stock\ today\n
+numComments=5

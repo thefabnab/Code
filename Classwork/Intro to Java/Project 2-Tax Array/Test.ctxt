@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Test()
+comment1.params=filingStatus\ brackets\ rates\ taxableIncome
+comment1.target=Test(int,\ int[][],\ double[],\ double)
+comment2.params=brackets
+comment2.target=void\ setBrackets(int[][])
+comment3.params=rates
+comment3.target=void\ setRates(double[])
+comment4.params=
+comment4.target=double\ getTaxableIncome()
+comment5.params=taxableIncome
+comment5.target=void\ setTaxableIncome(double)
+comment6.params=
+comment6.target=int\ getFilingStatus()
+comment7.params=filingStatus
+comment7.target=void\ setFilingStatus(int)
+comment8.params=
+comment8.target=double\ findTax()
+numComments=9

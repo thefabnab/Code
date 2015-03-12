@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Graduate()
+comment0.text=\n\ No\ argument\ constructor\n
+comment1.params=firstName\ lastName\ studentID\ gradePointAverage\ greScore\ program
+comment1.target=Graduate(java.lang.String,\ java.lang.String,\ int,\ double,\ int,\ java.lang.String)
+comment1.text=\n\ The\ constructor\ sets\ initial\ value\ for\ the\ studentID\ and\ gradePointAverage\ values.\n\ Explicit\ call\ to\ superclass\ CommunityMember\ sets\ initial\ valeus\ for\ fields\ firstName\ and\ lastName.\n\ \n\ @param\ \ \ firstName\ \ \ Student's\ first\ name\ from\ superclass\ CommunityMember.\n\ @param\ lastName\ \ Student's\ last\ name\ from\ superlass\ CommunityMember.\n\ @param\ studentID\ Student's\ student\ ID\ number.\n\ @param\ gradePointAverage\ Student's\ grade\ point\ average\n\ @param\ greScore\ \ Student's\ GRE\ score\n\ @param\ program\ \ \ the\ program\ the\ current\ student\ is\ enrolled\ in\n
+comment2.params=greScore
+comment2.target=void\ setGreScore(int)
+comment2.text=\n\ Set\ method\ designed\ to\ establish\ students\ GRE\ score\ for\ the\ range\ 400\ -\ 1600\ and\ 0\n
+comment3.params=program
+comment3.target=void\ setProgram(java.lang.String)
+comment3.text=\n\ Set\ program\ to\ determine\ student\ program\ name\n
+comment4.params=
+comment4.target=int\ getGreScore()
+comment4.text=\n\ \ get\ method\ to\ obtain\ GRE\ score\n\ \ \n\ \ @return\ greScore\ \ \ \ returns\ GRE\ score\ for\ individual\ student\n
+comment5.params=
+comment5.target=java.lang.String\ getProgram()
+comment5.text=\n\ get\ method\ to\ obtain\ student\ program\ information\n\ \n\ @return\ \ program\ returns\ program\ name\ for\ individual\ student\n
+comment6.params=
+comment6.target=java.lang.String\ toString()
+numComments=7

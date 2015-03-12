@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Salesperson()
+comment0.text=\n\ No\ argument\ constructor\n
+comment1.params=name\ address\ salary\ sales
+comment1.target=Salesperson(java.lang.String,\ java.lang.String,\ double,\ int)
+comment1.text=\n\ Constructor\ accounting\ for\ Salespersons\ parameters.\n\ \n\ @param\ name\ \ Salesperson\ name\n\ @param\ address\ \ \ Salesperson\ address\n\ @param\ salary\ \ \ \ Salesperson\ salary\n\ @param\ sales\ \ \ \ \ Salesperson\ salary\n
+comment2.params=sales
+comment2.target=void\ setSales(int)
+comment2.text=\n\ Set\ method\ establishing\ salesperson\ sales\ value\n
+comment3.params=
+comment3.target=int\ getSales()
+comment3.text=\n\ Get\ method\ returning\ number\ of\ sales\ made\ by\ employee\n\ \n\ @return\ Sales\ of\ salesperson\n
+comment4.params=
+comment4.target=double\ getAdditionalIncome()
+comment4.text=\n\ Method\ calculating\ and\ returning\ the\ additional\ income\ earned\ for\ a\ salesperson\n\ \n\ @return\n
+numComments=5
