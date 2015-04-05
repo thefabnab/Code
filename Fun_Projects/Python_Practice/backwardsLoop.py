@@ -1,0 +1,10 @@
+#This is a loop that prints out the letters backwards in a string
+
+bac = 'wanker'
+
+index = -1
+
+while index > (len(bac)+1)*(-1):
+    letter = bac[index]
+    print letter
+    index = index - 1
