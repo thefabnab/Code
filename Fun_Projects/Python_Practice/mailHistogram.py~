@@ -1,0 +1,16 @@
+#opens up a file and searches through it for references of email addresses
+
+file = open('mbox.txt')
+
+counts = dict()
+
+for line in file:
+    line = line.rstrip()
+    line = line.lower()
+    if line.startswith('from:'):
+        words = line.split()
+        if words[1] not in counts:
+            counts[words[1]] = 1
+        else:
+            counts[words[1]] += 1
+print counts
