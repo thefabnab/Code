@@ -1,0 +1,8 @@
+#! /bin/bash
+# shell changes the users pwd via user input
+
+cat <<EOF
+-------------------------------
+PWD is currently set as $PWD
+
+EOF
