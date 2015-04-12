@@ -14,3 +14,6 @@ echo "however in the presence of a :+ substitution hat will echo differently"
 text="I'm not working"
 echo ${hat:+text}
 
+echo "filnally I shall calculate lengths and slices of 'strings'"
+echo ${#hat} " is the length of hat (0 index)"
+echo ${hat:3} " is the string from position 3 on"

@@ -12,5 +12,5 @@ echo ${hat:=text}
 
 echo "however in the presence of a :+ substitution hat will echo differently"
 text="I'm not working"
-echo ${hate:+text}
+echo ${hat:+text}
 
