@@ -1,0 +1,14 @@
+#This is a script to produce the reverse compliment of a givne DNA squence
+
+def ReverseCompliment(Pattern):
+    i = 0
+    Compliment = []
+    comp_dict = {'A':'T', 'G':'C', 'T':'A', 'C':'G'}
+    for i in Pattern:
+        Compliment.append(comp_dict[i])
+    ReverseCompliment = Compliment[::-1]
+    return "".join(str(x) for x in ReverseCompliment)
+    #return ReverseCompliment
+
+Pattern = 'CGGA'
+print ReverseCompliment(Pattern)
