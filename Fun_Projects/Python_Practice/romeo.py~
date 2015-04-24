@@ -9,8 +9,8 @@ except:
     exit()
 for line in file:
     line = line.rstrip()
-    lis = line.split()
-    for i in lis:
-        if i not in lis:
+    spl = line.split()
+    for i in spl:
+        if i not in romeo:
             romeo.append[i]
     print romeo

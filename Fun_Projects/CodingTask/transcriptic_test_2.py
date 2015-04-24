@@ -1,0 +1,108 @@
+#Transcriptic Test #2 converting provided cDNA sequence to both RNA and all likely protein sequences.
+import argparse
+
+#Converts DNA to RNA using a dictionary to change T's to U's within the given input sequence
+
+def DNA_RNA(input):
+    i = 0
+    Compliment = []
+    comp_dict = {'A':'A', 'G':'G', 'T':'U', 'C':'C'}
+    for i in input:
+        Compliment.append(comp_dict[i])
+    return "".join(x for x in Compliment)
+
+#Converts any given RNA sequence to a series of protein sequences through searching the given RNA strand 
+#for transcription start sites (AUG's) and terminates upon crossing a stop codon (indicated by "-") 
+
+def RNA_Protein(input,length,startRange):
+
+    codon_dic = {"UUU":"F", "UUC":"F", "UUA":"L", "UUG":"L",
+    "UCU":"S", "UCC":"s", "UCA":"S", "UCG":"S",
+    "UAU":"Y", "UAC":"Y", "UAA":"-", "UAG":"-",
+    "UGU":"C", "UGC":"C", "UGA":"-", "UGG":"W",
+    "CUU":"L", "CUC":"L", "CUA":"L", "CUG":"L",
+    "CCU":"P", "CCC":"P", "CCA":"P", "CCG":"P",
+    "CAU":"H", "CAC":"H", "CAA":"Q", "CAG":"Q",
+    "CGU":"R", "CGC":"R", "CGA":"R", "CGG":"R",
+    "AUU":"I", "AUC":"I", "AUA":"I", "AUG":"M",
+    "ACU":"T", "ACC":"T", "ACA":"T", "ACG":"T",
+    "AAU":"N", "AAC":"N", "AAA":"K", "AAG":"K",
+    "AGU":"S", "AGC":"S", "AGA":"R", "AGG":"R",
+    "GUU":"V", "GUC":"V", "GUA":"V", "GUG":"V",
+    "GCU":"A", "GCC":"A", "GCA":"A", "GCG":"A",
+    "GAU":"D", "GAC":"D", "GAA":"E", "GAG":"E",
+    "GGU":"G", "GGC":"G", "GGA":"G", "GGG":"G",}
+
+    #The StartPositions method takes the length of any given RNA string and incrementally searches along 
+    #it for "AUG" sites and outputs those sites along the string.
+    
+    def StartPositions(input):
+        position = []
+        for i in range(len(input) - len("AUG") + 1):
+            if (input[i:(i + len("AUG"))] == "AUG"):
+                position.append(i)
+        return position
+
+    #Similar to the StartPositions method the StopPositions method searches through a string finding regions 
+    #where Stop codons are found. While I didn't use it for the main method I kept it in because the 
+    #assignment wanted a method that would perform its function.
+
+    def StopPositions(input):
+       position = []
+       for i in range(len(input) - len("UAA") + 1):
+           if (input[i:(i + len("UAA"))] == ("UGA"or"UAG"or"UGA")):
+               position.append(i)
+       return position            
+
+    #Using the dictionary assigned above the Translation method converts the triplicate codons into their
+    #respective amino acid counterparts and stops upon finding a stop codon (-)
+
+    def Translation(input):
+        protein = []
+        for i in range(0, len(input), 3):
+            codon = (input[i:(i+3)])
+            protein.append(codon_dic[codon])
+            if codon_dic[codon] == "-":
+                break
+            else:
+                continue
+        return "".join(x for x in protein)
+    
+    #The main method combines start codon sequences found within the string with the translation method
+    #to produce a series of protein sequences all extended from one start codon to one stop codon.
+    #The parameters of this algorithm are such that it will provide alternative amino acid sequences for
+    #all start/stop codons until 50% within the given RNA strand and only outputs potential proteins which
+    #are >10 amino acids long (both of these values can be modified with command line parameters)
+
+    def Main(input, length,startRange):
+        Products = []
+        StartSites = StartPositions(input)
+        for i in range(0, len(StartSites)):
+            if StartSites[i] < (len(input)*(startRange/100)):
+                sequence = Translation(input[StartSites[i]:])
+                if len(sequence) > int(length):
+                    Products.append(sequence)
+            else:
+                pass
+        Products = sorted(Products, key = len, reverse = True)
+        return "\n\n".join(x for x in Products)
+    return Main(input,length,startRange)
+
+#Command line interface options
+parser = argparse.ArgumentParser(description= "A quick command line program to convert cDNA to both RNA and protein")
+parser.add_argument("--rna", help="Takes cDNA sequence and outputs RNA",type=argparse.FileType('r'))
+parser.add_argument("--genes", help="Takes cDNA sequence, converts it to RNA, and translates it to its  most likely protein sequences", type=argparse.FileType('r')) 
+parser.add_argument("--length",help="Specifies a rough estimate of the minimum length of the Amino Acid sequence you are looking for and defaults to a length 10 amino acids",type=int, default=10)
+parser.add_argument("--start",help="Specifies the percentage of the sequence the expected start codon should be found  (ie --start 25 for start codons found within the first 25% of the sequence). This helps narrow down candidate protein choices.",type=float,default=50)
+args = parser.parse_args()
+
+if args.rna != None:
+    for text in args.rna:
+        print "DNA: " + text + "\n" + "RNA: " + DNA_RNA(text)
+else:
+    pass
+if args.genes != None:
+    for text in args.genes:
+        print "DNA: \n" + text + "\n\n" + "RNA:\n " + DNA_RNA(text) + "\n\n" + "Amino Acid Sequences: \n" + str(RNA_Protein(DNA_RNA(text),args.length,args.start))
+else:
+    pass

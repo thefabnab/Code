@@ -1,0 +1,52 @@
+#Transcriptic test #1- Converts a given 0 based index value from 0 - 95 into a human readable 96 well plate format and vice versa
+
+import argparse
+
+#Method to convert the indexed 96 well plate value into a human readable well
+
+def humanize(well):
+    well = int(well)
+    column = (well%12) + 1
+    rows = {0: 'A', 1:'B', 2:'C',3:'D',4:'E',5:'F',6:'G',7:'H'}
+    i = 0
+    while i*12 <= well:
+        i = i+1
+    else:
+        row = rows[i-1]            
+    return row + str(column)
+
+#Method to convert a human readable well into an indexed 96 well plate value
+
+def robotize(well):
+    well = well.upper()
+    rows = {'A':0, 'B':1,'C':2,'D':3,'E':4,'F':5,'G':6,'H':7}
+    row = rows[well[0]]
+    column = int(well[1:3])-1
+    bot = column + (row * 12)
+    return bot
+
+
+#Command line interface options
+parser = argparse.ArgumentParser(description= "A quick command line program to convert a 96 well plate to and from human readable and indexed values")
+parser.add_argument("--human", help="Takes an indexed plate position and outputs it to a human readable format",type=str)
+parser.add_argument("--robotize", help="Takes a human readable plate position and converts it to an indexed value", type=str) 
+parser.add_argument("--all", help="Returns all possible values for both Humanize and Robotize methods",action='store_true')
+args = parser.parse_args()
+
+if args.human != None:
+    print args.human + " converts to: " + humanize(args.human)
+else:
+    pass
+
+if args.robotize != None:
+    print args.robotize + " converts to: " + str(robotize(args.robotize))
+else:
+    pass
+
+if args.all:
+    print "\nAll values from Robotized to Human: \n"
+    for x in range(0,96):
+        print str(x) + " converts to: " + humanize(x)
+    print "\nAll values from Humanized to Robot: \n"
+    for y in range(0,96):
+        print str(humanize(y)) + " converts to: " + str(robotize(humanize(y)))
