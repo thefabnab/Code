@@ -1,4 +1,4 @@
-#Transcriptic test #1- Converts a given 0 based index value from 0 - 95 into a human readable 96 well plate format and vice versa
+#Converts a given 0 based index value from 0 - 95 into a human readable 96 well plate format and vice versa
 
 import argparse
 

@@ -1,4 +1,4 @@
-#Transcriptic Test #2 converting provided cDNA sequence to both RNA and all likely protein sequences.
+#Converting provided cDNA sequence to both RNA and all likely protein sequences.
 import argparse
 
 #Converts DNA to RNA using a dictionary to change T's to U's within the given input sequence
