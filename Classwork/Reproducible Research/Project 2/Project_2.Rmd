@@ -1,0 +1,168 @@
+---
+title: "Reproduable Research: Project 2"
+author: "Nabil Azamy"
+date: "April 26, 2015"
+output: html_document
+---
+
+
+The National Oceanic and Atmospheric Administration's (NOAA) storm database is 
+a publically accessible database which provides data pertaining to the patterns
+and impact storms can have to any given region within the united states. These
+data can be used to calculate any number of impacts and for the purposes of 
+this analysis we will be looking at the following:
+1. The relative magnitude different weather patterns have on injuries and fatalities
+within the united states
+2. The relative cost associated with both property and cop damages pertaining to these weather patterns.
+
+
+###Load Libraries and data into
+The ggplot2 and knitr library will be used later for plotting the final data
+Loading the NOAA data into memory to be used for our analysis
+```{r, cache=TRUE}
+library(knitr)
+library(ggplot2)
+
+data <- read.csv("repdata-data-StormData.csv")
+
+```
+
+
+To begin the data analysis it is required to parse through the given dataset and 
+find the relvent columns:
+
+EVTYPE      Type of event
+
+FATALITIES  Number of fatalities
+
+INJURIES    Number of injuries
+
+PROPDMG     Property damage
+
+PROPDMGEXP  Order of magnitude for property damage
+
+CROPDMG     Crop damage
+
+PROPDMGEXP  Order of magnitude for crop damage
+
+
+```{r, cache=TRUE}
+SpecificCol <- c("EVTYPE", "FATALITIES", "INJURIES", "PROPDMG", "PROPDMGEXP", "CROPDMG", 
+           "CROPDMGEXP")
+dataSubset <- data[SpecificCol]
+```
+
+
+To ease the upcoming calculations the order of magnitudes for Property and Crop
+were converted from chars to ints:
+
+```{r, cache=TRUE}
+
+unique(dataSubset$PROPDMGEXP)
+unique(dataSubset$CROPDMGEXP)
+```
+
+```{r, cache=TRUE}
+#Property
+dataSubset$PROPEXP[dataSubset$PROPDMGEXP == "K"] <- 1000
+dataSubset$PROPEXP[dataSubset$PROPDMGEXP == "M"] <- 1e+06
+dataSubset$PROPEXP[dataSubset$PROPDMGEXP == ""] <- 1
+dataSubset$PROPEXP[dataSubset$PROPDMGEXP == "B"] <- 1e+09
+dataSubset$PROPEXP[dataSubset$PROPDMGEXP == "m"] <- 1e+06
+dataSubset$PROPEXP[dataSubset$PROPDMGEXP == "0"] <- 1
+dataSubset$PROPEXP[dataSubset$PROPDMGEXP == "5"] <- 1e+05
+dataSubset$PROPEXP[dataSubset$PROPDMGEXP == "6"] <- 1e+06
+dataSubset$PROPEXP[dataSubset$PROPDMGEXP == "4"] <- 10000
+dataSubset$PROPEXP[dataSubset$PROPDMGEXP == "2"] <- 100
+dataSubset$PROPEXP[dataSubset$PROPDMGEXP == "3"] <- 1000
+dataSubset$PROPEXP[dataSubset$PROPDMGEXP == "h"] <- 100
+dataSubset$PROPEXP[dataSubset$PROPDMGEXP == "7"] <- 1e+07
+dataSubset$PROPEXP[dataSubset$PROPDMGEXP == "H"] <- 100
+dataSubset$PROPEXP[dataSubset$PROPDMGEXP == "1"] <- 10
+dataSubset$PROPEXP[dataSubset$PROPDMGEXP == "8"] <- 1e+08
+dataSubset$PROPEXP[dataSubset$PROPDMGEXP == "+"] <- 0
+dataSubset$PROPEXP[dataSubset$PROPDMGEXP == "-"] <- 0
+dataSubset$PROPEXP[dataSubset$PROPDMGEXP == "?"] <- 0
+
+#Crop
+dataSubset$CROPEXP[dataSubset$CROPDMGEXP == "M"] <- 1e+06
+dataSubset$CROPEXP[dataSubset$CROPDMGEXP == "K"] <- 1000
+dataSubset$CROPEXP[dataSubset$CROPDMGEXP == "m"] <- 1e+06
+dataSubset$CROPEXP[dataSubset$CROPDMGEXP == "B"] <- 1e+09
+dataSubset$CROPEXP[dataSubset$CROPDMGEXP == "0"] <- 1
+dataSubset$CROPEXP[dataSubset$CROPDMGEXP == "k"] <- 1000
+dataSubset$CROPEXP[dataSubset$CROPDMGEXP == "2"] <- 100
+dataSubset$CROPEXP[dataSubset$CROPDMGEXP == ""] <- 1
+dataSubset$CROPEXP[dataSubset$CROPDMGEXP == "?"] <- 0
+```
+
+Next the exponential values were multiplied against the integer values to arrive
+at each set of property and crop damages on the order of magnitude anticipated:
+```{r}
+#Calculating property damages
+dataSubset$PROPDMGVAL <- dataSubset$PROPDMG * dataSubset$PROPEXP
+
+#Calculating crop damages
+dataSubset$CROPDMGVAL <- dataSubset$CROPDMG * dataSubset$CROPEXP
+```
+
+
+Finally aggregate subsets were made from the fatalities, injuries, property damage,
+and crop damage subset:
+
+```{r, cache=TRUE}
+
+fatalities_agg <- aggregate(FATALITIES ~ EVTYPE, data = dataSubset, FUN = sum)
+injury_agg <- aggregate(INJURIES ~ EVTYPE, data = dataSubset, FUN = sum)
+propdmg_agg <- aggregate(PROPDMGVAL ~ EVTYPE, data = dataSubset, FUN = sum)
+cropdmg_agg <- aggregate(CROPDMGVAL ~ EVTYPE, data = dataSubset, FUN = sum)
+
+```
+
+
+###Question No.1: Across the United States, which types of events (as indicated in the EVTYPE variable) are most harmful with respect to population health?
+
+Using the ggplot2 to plot the top ten causes of both Fatalities and Injury within the United States:
+
+```{r, cache=TRUE}
+fatal_10 <- fatalities_agg[order(-fatalities_agg$FATALITIES), ][1:10, ]
+ggplot(data = fatal_10, aes(x = fatal_10$EVTYPE, y = fatal_10$FATALITIES)) + geom_bar(colour = "green", fill = "orange", stat = "identity") + xlab("Event Type") + ylab("Fatalities") + ggtitle("Total Fatalities by Environment Type: 1950 - 2011")+ theme(axis.text.x = element_text(angle = 90, hjust = 1))
+```
+
+and 
+
+```{r, cache=TRUE}
+
+injury_10 <- injury_agg[order(-injury_agg$INJURIES), ][1:10, ]
+
+ggplot(data = injury_10, aes(x = injury_10$EVTYPE, y = injury_10$INJURIES)) + geom_bar(colour = "green", fill = "orange", stat = "identity") + xlab("Event Type") + ylab("Injuries") + ggtitle("Total Injuries by Enviromental Type: 1950 - 2011") + theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+```
+
+It can clearly be noted that Tornados within the united states are the leader in fatalities and injuries within the United States during this time frame with excessive heat and floods coming in second.
+
+###Question No.2: Across the United States, which types of events have the greatest economic consequences?
+
+Again using ggplot2 plotting the calculated damages associated with property and crops reveals the following:
+
+```{r, cache=TRUE}
+
+propdmg_10 <- propdmg_agg[order(-propdmg_agg$PROPDMGVAL), ][1:10, ]
+
+ggplot(data = propdmg_10, aes(x = propdmg_10$EVTYPE, y = propdmg_10$PROPDMGVAL)) +    geom_bar(colour = "green", fill = "orange", stat = "identity") + xlab("Event Type") + ylab("Billions USD") + ggtitle("Total cost of Property Damage by Enviromental Type: 1950 - 2011") + theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+
+```
+
+and
+
+```{r,cache=TRUE}
+
+cropdmg_10 <- cropdmg_agg[order(-cropdmg_agg$CROPDMGVAL), ][1:10, ]
+ggplot(data = cropdmg_10, aes(x = cropdmg_10$EVTYPE, y = cropdmg_10$CROPDMGVAL)) +  geom_bar(colour = "green", fill = "orange", stat = "identity") + xlab("Event Type") +  ylab("Billions USD") + ggtitle("Total cost of Crop Damage by Enviromental Type: 1950 -  2011") + theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+```
+
+These plots indicate the leading cause of damages within the United States relating to property damage are floods with Hurricanes/Typhoons coming in second.
+
+The leading cause of crop damages are droughts which occured during the time period indicated with floods coming in second.
