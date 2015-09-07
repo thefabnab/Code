@@ -1,0 +1,17 @@
+Nabil Azamy
+
+Question Two from Final
+
+
+a. 3 columns using the following command:
+
+SELECT * FROM cv;
+
+b. It would be ID 11 from the following command:
+
+SELECT cv_id FROM cv WHERE name='GO';
+
+c. There are 3: regulates, negatively_regulates, positivley_regulates. They were obtained by the following search:
+
+SELECT name FROM cvterm WHERE cv_id='11';
+

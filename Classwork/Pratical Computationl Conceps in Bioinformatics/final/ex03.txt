@@ -1,0 +1,17 @@
+Nabil Azamy
+
+Question Three from Final
+
+Temperature from C to F:
+
+NaBook-Air:final thefabnab$ python ex03.py
+Please enter Temperature scale (C or F): c
+Please enter your temperature in C: 45.2
+45.2 degrees C is 113.4 degrees F
+
+Temperature from F to C:
+
+NaBook-Air:final thefabnab$ python ex03.py
+Please enter Temperature scale (C or F): f
+Please enter your temperature in F: -43
+-43.0 degrees F is -41.7 degrees C

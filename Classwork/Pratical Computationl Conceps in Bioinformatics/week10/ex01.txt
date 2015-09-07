@@ -1,0 +1,10 @@
+Just a few statements that I'd probably put into a re.search() function
+
+
+1.
+a. r"[bB]+[cC]*"
+b. r"\+[*]*"
+c. (whatever + r"{3}") 
+d. r"[areg\n]"
+e.
+re_search = word + r"[ ] 

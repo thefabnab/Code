@@ -1,0 +1,32 @@
+Nabil Azamy
+
+Final assignment question No. 1
+
+a. How much disck space your own home area is using?
+
+$du -h /home/nazamy1/
+this prints out a display of the contents of a folder and their size. Using the -h tag you can have a human readable output. ~ 700MB for my folder.
+
+
+b. How many files are in your entire home area?
+
+$find nazamy1/ -print | wc -l
+The find program searches and displays recursively all the files within a directory (including other directories within it) with the | redirecting STDOUT to count the number of lines provided by the find results. There are 75 files within my home directory, including the home folder itself.
+
+c. What permissions would you set on your home area to make sure no one else could even look into it to see what files are there?
+
+There are three classes of permission sets available on Unix for users. There's user, group, and global per missions each with 3 distinct accessibility options: read, write, and execute. If I wanted to prevent other users (anyone not me) from viewing the contents of my folder I would set up my permissions as follows:
+-rwx------
+Using the following octal command:
+chmod 700 /home/nazamy1/ 
+Each of the digits in places in the chmod flag 700 is reflective of a user permission level; myself (7), group members (0), and others (0). The numbers dictate what level of permissions I am granting them with 0 being none and 7 being all and numbers 1-6 providing various limited access.
+
+d. Determine which shell you are currently using?
+
+ps -p $$
+
+Under the CMD column should be listed the shell type currently being in use
+
+e. Read the last 10 lines of a file called foo and write them to a new file called bar
+
+tail -n 10 foo  > bar

@@ -1,0 +1,19 @@
+Nabil Azamy
+
+Question Six from Final
+
+This is an overview of the output for question No. 6:
+
+NaBook-Air:final thefabnab$ python ex06.py
+Query ID: Arf1
+Query Length: 614
+Alignment #1: Accession = ref|XM_005094338.1| (Length = 2377, Score = 98)
+Alignment #2: Accession = gb|EU829582.1| (Length = 858, Score = 75)
+Alignment #3: Accession = ref|XM_005023737.1| (Length = 1939, Score = 72)
+Alignment #4: Accession = ref|XM_004088641.1| (Length = 3923, Score = 64)
+Alignment #5: Accession = ref|XM_004088640.1| (Length = 3898, Score = 64)
+Alignment #6: Accession = ref|XM_004088639.1| (Length = 4026, Score = 64)
+Alignment #7: Accession = ref|XM_003252207.1| (Length = 4128, Score = 64)
+Alignment #8: Accession = gb|EU829048.1| (Length = 750, Score = 64)
+Alignment #9: Accession = ref|NM_001133245.1| (Length = 3605, Score = 64)
+Alignment #10: Accession = ref|XM_003939112.1| (Length = 1417, Score = 59)

@@ -1,0 +1,17 @@
+Nabil Azamy
+
+Question Four from Final
+
+Reverse Compliment example with upper and lower case:
+
+NaBook-Air:final thefabnab$ python ex04.py 
+Please enter your oligo sequence: TATATATATATATTATATTATATATATAT
+Your reverse compliment: ATATATATATAATATAATATATATATATA
+Please enter your oligo sequence: acacagacagacagacagACAGAGCAGA
+Your reverse compliment: TCTGCTCTGTCTGTCTGTCTGTCTGTGT
+Please enter your oligo sequence: AAAtttgcgatgacCCACGATCGACGTAGC
+Your reverse compliment: GCTACGTCGATCGTGGGTCATCGCAAATTT
+Please enter your oligo sequence: AAAATTTTATATATATAr
+R isn't a DNA base
+
+This program continued until it hit the r base where it exited and stopped running
