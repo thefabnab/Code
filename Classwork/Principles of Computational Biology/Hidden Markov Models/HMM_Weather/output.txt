@@ -1,0 +1,8 @@
+       walk    shop   clean
+Rainy: 0.06000 0.03840 0.01344
+Sunny: 0.24000 0.04320 0.00259
+
+The probability of the sequence: 
+ ['Sunny', 'Rainy', 'Rainy'] is: 0.01344 
+
+And the probability of generating this spequence as described by the forward algorithm is: 0.034

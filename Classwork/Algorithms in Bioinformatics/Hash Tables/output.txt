@@ -1,0 +1,45 @@
+Number of items to be hashed:  60
+****  Hashing Scheme: Division modulo 120 on a table size of 120 slots (bucket size = 1), linear probing ****
+
+
+Collisions:  30
+****  Hashing Scheme: Division modulo 120 on a table size of 120 slots (bucket size = 1), quadratic probing ****
+
+
+Collisions:  67
+****  Hashing Scheme: Division modulo 120 on a table size of 120 slots (bucket size = 1), chaining ****
+
+
+Collisions:  71
+****  Hashing Scheme: Division modulo 113 on a table size of 120 slots (bucket size = 1), linear probing ****
+
+
+Collisions:  30
+****  Hashing Scheme: Division modulo 113 on a table size of 120 slots (bucket size = 1), quadratic probing ****
+
+
+Collisions:  34
+****  Hashing Scheme: Division modulo 113 on a table size of 120 slots (bucket size = 1), chaining ****
+
+
+Collisions:  34
+****  Hashing Scheme: Division modulo 41 on a table size of 40 slots (bucket size = 3), (120 total slots)  linear probing ****
+
+
+Collisions:  43
+****  Hashing Scheme: Division modulo 41 on a table size of 40 slots (bucket size = 3), (120 total slots)  quadratic probing ****
+
+
+Collisions:  44
+****  Hashing Scheme: Custom hash function on a table size of 120 slots (bucket size = 1), linear probing ****
+
+
+Collisions:  37
+****  Hashing Scheme: Custom hash function on a table size of 120 slots (bucket size = 1), quadratic probing ****
+
+
+Collisions:  31
+****  Hashing Scheme: Custom hash function on a table size of 120 slots (bucket size = 1), chaining ****
+
+
+Collisions:  30
