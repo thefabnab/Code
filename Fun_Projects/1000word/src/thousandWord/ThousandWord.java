@@ -13,12 +13,7 @@ public class ThousandWord
      */
     public static void main(String[] args)
     {
-        for (double num = 1; num < 100; num++)
-        {
-            double sroot = Math.sqrt(num);
-            System.out.println("Square root of " + num
-                    + " is " + sroot);
-        }
+        System.out.println("This is the start of something big");
     }
 
 }
