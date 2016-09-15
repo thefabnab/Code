@@ -19,7 +19,7 @@ main <- function(arg1){
   run_info <- run_parameters()
   
   cat("\nGenerating Interop output.csv file\n")
-  path <- paste("/Users/nazamy/Desktop/interop/osx_clang_release/bin/interop2csv ", arg1, " > output.csv")
+  path <- paste("/Users/nazamy/Desktop/Stuff/Git_Code/Fun_Projects/Interop Parser/osx_clang_release/bin ", arg1, " > output.csv")
   system(path, intern = T)
   cat("Generation complete\n")
   
